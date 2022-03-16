@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
+
+
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SoheilaAskarzadeh/config-server.git
+          clone-on-start: false
+          username: soheila.askarzadeh@gmail.com
+          password: S@heila1643
+
+  config:
+    activate:
+      on-profile: git
